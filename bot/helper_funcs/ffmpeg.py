@@ -17,7 +17,8 @@ import re
 import json
 import subprocess
 import math
-import ffmpeg
+import glob
+import sys
 from bot.helper_funcs.display_progress import (
   TimeFormatter
 )
@@ -45,7 +46,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
       "-i",
       video_file,
       "-c:v", 
-      "hevc",
+      "hvc1",
       "-preset", 
       "ultrafast",
       "-tune",
