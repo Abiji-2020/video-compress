@@ -51,8 +51,9 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
       "ultrafast",
       "-tune",
       "film",
-      "-x265-params"
-      "crf=28"
+      "-x265-params", 
+      "crf=28", 
+      "-tag:v hvc1", 
       "-c:a",
       "aac",
       out_put_file_name
