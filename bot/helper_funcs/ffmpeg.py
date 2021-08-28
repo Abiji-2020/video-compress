@@ -17,6 +17,7 @@ import re
 import json
 import subprocess
 import math
+import ffmpeg
 from bot.helper_funcs.display_progress import (
   TimeFormatter
 )
@@ -44,13 +45,13 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
       "-i",
       video_file,
       "-c:v", 
-      "h265",
+      "hevc",
       "-preset", 
       "ultrafast",
       "-tune",
       "film",
       "-c:a",
-      "copy",
+      "aac",
       out_put_file_name
     ]
     if not isAuto:
